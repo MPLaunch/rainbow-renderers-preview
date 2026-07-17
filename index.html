@@ -404,5 +404,17 @@
       probe.src='hero.webp';
     })();
   </script>
+
+<!-- MP Launch preview open-tracking — texts Peter when a lead opens this preview -->
+<script>
+(function(){try{
+  if(navigator.webdriver)return;
+  var slug="rainbow-renderers-preview", label="Rainbow Renderers (Joe)";
+  var k="mpl_seen_"+slug, last=+localStorage.getItem(k)||0;
+  if(Date.now()-last<432e5)return;
+  localStorage.setItem(k,String(Date.now()));
+  new Image().src="https://mplaunch.com.au/api/preview-view?slug="+encodeURIComponent(slug)+"&label="+encodeURIComponent(label)+"&t="+Date.now();
+}catch(e){}})();
+</script>
 </body>
 </html>
